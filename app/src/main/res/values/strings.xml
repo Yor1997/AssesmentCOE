@@ -13,4 +13,13 @@
     <string name="zitplaatsen">Aantal zitplaatsen</string>
     <string name="inrichting">Inrichting</string>
     <string name="voertuigsoort">Voertuigsoort</string>
+    <string name="brandstof_omschrijving">Brandstof omschrijving</string>
+    <string name="brandstofverbruik_buiten">Brandstofverbruik buiten</string>
+    <string name="brandstofverbruik_gecombineerd">Brandstofverbruik gecombineerd</string>
+    <string name="brandstofverbruik_stad">Brandstofverbruik stad</string>
+    <string name="co2_uitstoot_gecombineerd">co2 uitstoot gecombineerd</string>
+    <string name="geluidsniveau_stationair">Geluidsniveau stationair</string>
+    <string name="geluidsniveau_rijdend">Geluidsniveau rijdend</string>
+    <string name="nettomaximumvermogen">Nettomaximumvermogen</string>
+    <string name="uitlaatemissieniveau">Uitlaatemissieniveau</string>
 </resources>

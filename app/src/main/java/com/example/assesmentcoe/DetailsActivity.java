@@ -15,6 +15,7 @@ public class DetailsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_details);
 
         List<Voertuig> voertuigList = (List<Voertuig>) getIntent().getSerializableExtra("voertuigList");
+        List<VoertuigBrandstof> secondVoertuigList = (List<VoertuigBrandstof>) getIntent().getSerializableExtra("secondVoertuigList");
 
         TextView kentekenTextViewCar1 = findViewById(R.id.tv_LicencePlate_Car1);
         TextView voertuigsoortTextViewCar1 = findViewById(R.id.tv_Type_Car1);
@@ -38,6 +39,30 @@ public class DetailsActivity extends AppCompatActivity {
             eerste_kleurTextViewCar1.setText(voertuig.getEerste_kleur());
             catalogusprijsTextViewCar1.setText(String.valueOf(voertuig.getCatalogusprijs()));
             aantal_deurenTextViewCar1.setText(String.valueOf(voertuig.getAantal_deuren()));
+        }
+
+        TextView brandstof_omschrijvingTextViewCar1 = findViewById(R.id.tv_Fuel_Car1);
+        TextView brandstofverbruik_buitenTextViewCar1 = findViewById(R.id.tv_FuelOutdoor_Car1);
+        TextView brandstofverbruik_gecombineerdTextViewCar1 = findViewById(R.id.tv_FuelCombined_Car1);
+        TextView brandstofverbruik_stadTextViewCar1 = findViewById(R.id.tv_FuelCity_Car1);
+        TextView co2_uitstoot_gecombineerdTextViewCar1 = findViewById(R.id.tv_CO2_Car1);
+        TextView geluidsniveau_rijdendTextViewCar1 = findViewById(R.id.tv_NoiseDriving_Car1);
+        TextView geluidsniveau_stationairTextViewCar1 = findViewById(R.id.tv_NoiseStationary_Car1);
+        TextView nettomaximumvermogenTextViewCar1 = findViewById(R.id.tv_NetMaximum_Car1);
+        TextView uitlaatemissieniveauTextViewCar1 = findViewById(R.id.tv_ExhaustEmission_Car1);
+
+        if (secondVoertuigList != null && !secondVoertuigList.isEmpty()) {
+            VoertuigBrandstof voertuigBrandstof = secondVoertuigList.get(0);
+
+            brandstof_omschrijvingTextViewCar1.setText(voertuigBrandstof.getBrandstof_omschrijving());
+            brandstofverbruik_buitenTextViewCar1.setText(voertuigBrandstof.getBrandstofverbruik_buiten());
+            brandstofverbruik_gecombineerdTextViewCar1.setText(voertuigBrandstof.getBrandstofverbruik_gecombineerd());
+            brandstofverbruik_stadTextViewCar1.setText(voertuigBrandstof.getBrandstofverbruik_stad());
+            co2_uitstoot_gecombineerdTextViewCar1.setText(voertuigBrandstof.getCo2_uitstoot_gecombineerd());
+            geluidsniveau_rijdendTextViewCar1.setText(voertuigBrandstof.getGeluidsniveau_rijdend());
+            geluidsniveau_stationairTextViewCar1.setText(voertuigBrandstof.getGeluidsniveau_stationair());
+            nettomaximumvermogenTextViewCar1.setText(voertuigBrandstof.getNettomaximumvermogen());
+            uitlaatemissieniveauTextViewCar1.setText(voertuigBrandstof.getUitlaatemissieniveau());
         }
     }
 }
