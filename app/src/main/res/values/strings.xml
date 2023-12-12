@@ -4,4 +4,13 @@
     <string name="zoeken">Zoeken</string>
     <string name="kenteken">Kenteken</string>
     <string name="toevoegen">Toevoegen</string>
+    <string name="merk">Merk</string>
+    <string name="vergelijker">Vergelijker</string>
+    <string name="Deuren">Aantal deuren</string>
+    <string name="catalogusprijs">Catalogusprijs</string>
+    <string name="kleur">Kleur</string>
+    <string name="handelsbenaming">handelsbenaming</string>
+    <string name="zitplaatsen">Aantal zitplaatsen</string>
+    <string name="inrichting">Inrichting</string>
+    <string name="voertuigsoort">Voertuigsoort</string>
 </resources>

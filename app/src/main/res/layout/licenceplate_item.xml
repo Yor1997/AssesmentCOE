@@ -8,12 +8,26 @@
     app:cardCornerRadius="7dp"
     android:backgroundTint="@color/licenseplate_yellow">
 
-    <TextView
-        android:id="@+id/tv_LicencePlate_Item"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        android:padding="10dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/tv_LicencePlate_Item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/imgv_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/baseline_close_24" />
+
+    </LinearLayout>
 
 </androidx.cardview.widget.CardView>

@@ -24,11 +24,11 @@
         android:layout_marginStart="40dp"
         android:layout_marginEnd="40dp"
         android:autofillHints="Kenteken"
+        android:inputType="textCapCharacters"
         android:background="@drawable/edt_licenceplate"
         android:ems="10"
         android:gravity="center"
-        android:hint="@string/kenteken"
-        android:inputType="textPersonName" />
+        android:hint="@string/kenteken" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_LicencePlate"
