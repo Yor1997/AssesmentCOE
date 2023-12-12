@@ -22,4 +22,7 @@
     <string name="geluidsniveau_rijdend">Geluidsniveau rijdend</string>
     <string name="nettomaximumvermogen">Nettomaximumvermogen</string>
     <string name="uitlaatemissieniveau">Uitlaatemissieniveau</string>
+    <string name="preformance_index">Preformance index</string>
+    <string name="massa_ledig_voertuig">Massa ledig voertuig</string>
+    <string name="back_button_goes_to_homescreen">Back button (Goes to Homescreen)</string>
 </resources>

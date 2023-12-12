@@ -18,8 +18,6 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
-import retrofit2.Call;
-import retrofit2.Callback;
 import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
@@ -92,39 +90,6 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-//    private void makeApiCall() {
-//        String kenteken = null;
-//
-//        if (!carList.isEmpty()) {
-//            kenteken = carList.get(carList.size() - 1);
-//        } else {
-//            return;
-//        }
-//
-//        Call<List<Voertuig>> call = apiService.getVoertuigDetails(kenteken);
-//
-//        System.out.println("Request URL: " + call.request().url());
-//
-//        call.enqueue(new Callback<List<Voertuig>>() {
-//            @Override
-//            public void onResponse(Call<List<Voertuig>> call, Response<List<Voertuig>> response) {
-//                if (response.isSuccessful() && response.body() != null && !response.body().isEmpty()) {
-//                    List<Voertuig> detailsList = response.body();
-//
-//                    Intent intent = new Intent(MainActivity.this, DetailsActivity.class);
-//                    intent.putExtra("voertuigList", (Serializable) detailsList);
-//                    startActivity(intent);
-//                } else {
-//                }
-//            }
-//
-//            @Override
-//            public void onFailure(Call<List<Voertuig>> call, Throwable t) {
-//                t.printStackTrace();
-//            }
-//        });
-//    }
-
     private void makeApiCall() {
         if (carList.isEmpty()) {
             return;
@@ -170,61 +135,6 @@ public class MainActivity extends AppCompatActivity {
             // Shutdown the ExecutorService
             executorService.shutdown();
         }
-
-//
-//        // First API Call
-//        Call<List<Voertuig>> call1 = apiService.getVoertuigDetails(kenteken);
-//
-//        System.out.println("Request URL 1: " + call1.request().url());
-//
-//        call1.enqueue(new Callback<List<Voertuig>>() {
-//            @Override
-//            public void onResponse(Call<List<Voertuig>> call, Response<List<Voertuig>> response) {
-//                if (response.isSuccessful() && response.body() != null && !response.body().isEmpty()) {
-//                    List<Voertuig> detailsList = response.body();
-//
-//                    // Assuming you have DetailsActivity for the first API
-//                    Intent intent = new Intent(MainActivity.this, DetailsActivity.class);
-//                    intent.putExtra("voertuigList", (Serializable) detailsList);
-//                    startActivity(intent);
-//                } else {
-//                    // Handle error for the first API call
-//                }
-//            }
-//
-//            @Override
-//            public void onFailure(Call<List<Voertuig>> call, Throwable t) {
-//                t.printStackTrace();
-//                // Handle failure for the first API call
-//            }
-//        });
-//
-//        // Second API Call
-//        Call<List<VoertuigBrandstof>> call2 = brandstofApiService.getVoertuigBrandstofDetails(kenteken);
-//
-//        System.out.println("Request URL 2: " + call2.request().url());
-//
-//        call2.enqueue(new Callback<List<VoertuigBrandstof>>() {
-//            @Override
-//            public void onResponse(Call<List<VoertuigBrandstof>> call, Response<List<VoertuigBrandstof>> response) {
-//                if (response.isSuccessful() && response.body() != null && !response.body().isEmpty()) {
-//                    List<VoertuigBrandstof> detailsList = response.body();
-//
-//                    // Assuming you have SecondDetailsActivity for the second API
-//                    Intent intent = new Intent(MainActivity.this, DetailsActivity.class);
-//                    intent.putExtra("secondVoertuigList", (Serializable) detailsList);
-//                    startActivity(intent);
-//                } else {
-//                    // Handle error for the second API call
-//                }
-//            }
-//
-//            @Override
-//            public void onFailure(Call<List<VoertuigBrandstof>> call, Throwable t) {
-//                t.printStackTrace();
-//                // Handle failure for the second API call
-//            }
-//        });
     }
 
 }

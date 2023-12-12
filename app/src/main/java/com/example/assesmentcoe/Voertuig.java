@@ -10,10 +10,11 @@ public class Voertuig implements Serializable {
     private String inrichting;
     private Integer aantal_zitplaatsen;
     private String eerste_kleur;
+    private Integer massa_ledig_voertuig;
     private Integer catalogusprijs;
     private Integer aantal_deuren;
 
-    public Voertuig(String kenteken, String voertuigsoort, String merk, String handelsbenaming, String inrichting, Integer aantal_zitplaatsen, String eerste_kleur, Integer catalogusprijs, Integer aantal_deuren) {
+    public Voertuig(String kenteken, String voertuigsoort, String merk, String handelsbenaming, String inrichting, Integer aantal_zitplaatsen, String eerste_kleur, Integer massa_ledig_voertuig, Integer catalogusprijs, Integer aantal_deuren) {
         this.kenteken = kenteken;
         this.voertuigsoort = voertuigsoort;
         this.merk = merk;
@@ -21,6 +22,7 @@ public class Voertuig implements Serializable {
         this.inrichting = inrichting;
         this.aantal_zitplaatsen = aantal_zitplaatsen;
         this.eerste_kleur = eerste_kleur;
+        this.massa_ledig_voertuig = massa_ledig_voertuig;
         this.catalogusprijs = catalogusprijs;
         this.aantal_deuren = aantal_deuren;
     }
@@ -53,6 +55,10 @@ public class Voertuig implements Serializable {
         return eerste_kleur;
     }
 
+    public Integer getMassa_ledig_voertuig() {
+        return massa_ledig_voertuig;
+    }
+
     public Integer getCatalogusprijs() {
         return catalogusprijs;
     }
@@ -70,6 +76,7 @@ public class Voertuig implements Serializable {
                 "\ninrichting = " + inrichting +
                 "\naantal_zitplaatsen = " + aantal_zitplaatsen +
                 "\neerste_kleur = " + eerste_kleur +
+                "\nmassa_ledig_voertuig = " + massa_ledig_voertuig +
                 "\ncatalogusprijs = " + catalogusprijs +
                 "\naantal_deuren = " + aantal_deuren +
                 "\n";

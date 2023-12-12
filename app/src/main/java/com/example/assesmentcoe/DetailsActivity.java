@@ -9,6 +9,9 @@ import java.util.List;
 
 public class DetailsActivity extends AppCompatActivity {
 
+    Double TotalSystemPower, PerformanceIndex;
+    Integer EmptyMass;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,6 +27,7 @@ public class DetailsActivity extends AppCompatActivity {
         TextView inrichtingTextViewCar1 = findViewById(R.id.tv_ModelType_Car1);
         TextView aantal_zitplaatsenTextViewCar1 = findViewById(R.id.tv_Seats_Car1);
         TextView eerste_kleurTextViewCar1 = findViewById(R.id.tv_Color_Car1);
+        TextView massa_ledig_voertuigTextViewCar1 = findViewById(R.id.tv_EmptyMass_Car1);
         TextView catalogusprijsTextViewCar1 = findViewById(R.id.tv_Price_Car1);
         TextView aantal_deurenTextViewCar1 = findViewById(R.id.tv_Doors_Car1);
 
@@ -37,6 +41,7 @@ public class DetailsActivity extends AppCompatActivity {
             inrichtingTextViewCar1.setText(voertuig.getInrichting());
             aantal_zitplaatsenTextViewCar1.setText(String.valueOf(voertuig.getAantal_zitplaatsen()));
             eerste_kleurTextViewCar1.setText(voertuig.getEerste_kleur());
+            massa_ledig_voertuigTextViewCar1.setText(String.valueOf(voertuig.getMassa_ledig_voertuig()));
             catalogusprijsTextViewCar1.setText(String.valueOf(voertuig.getCatalogusprijs()));
             aantal_deurenTextViewCar1.setText(String.valueOf(voertuig.getAantal_deuren()));
         }
@@ -64,5 +69,20 @@ public class DetailsActivity extends AppCompatActivity {
             nettomaximumvermogenTextViewCar1.setText(voertuigBrandstof.getNettomaximumvermogen());
             uitlaatemissieniveauTextViewCar1.setText(voertuigBrandstof.getUitlaatemissieniveau());
         }
+
+        TextView performanceIndexTextViewCar1 = findViewById(R.id.tv_PerformanceIndex_Car1);
+
+        if (brandstof_omschrijvingTextViewCar1.getText().equals("Elektriciteit")) {
+            performanceIndexTextViewCar1.setText(brandstof_omschrijvingTextViewCar1.getText());
+        }else {
+            Voertuig voertuig = voertuigList.get(0);
+            VoertuigBrandstof voertuigBrandstof = secondVoertuigList.get(0);
+
+            TotalSystemPower = Double.valueOf(voertuigBrandstof.getNettomaximumvermogen());
+            EmptyMass = voertuig.getMassa_ledig_voertuig();
+            PerformanceIndex = TotalSystemPower / EmptyMass;
+            performanceIndexTextViewCar1.setText(String.valueOf(PerformanceIndex));
+        }
+
     }
 }
