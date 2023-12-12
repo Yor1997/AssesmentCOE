@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">AssesmentCOE</string>
+    <string name="voertuigen_vergelijken">Voertuigen vergelijken</string>
+    <string name="zoeken">Zoeken</string>
+    <string name="kenteken">Kenteken</string>
+    <string name="toevoegen">Toevoegen</string>
+</resources>

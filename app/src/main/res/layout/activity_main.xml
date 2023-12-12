@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/tv_Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:textColor="@color/black"
+        android:text="@string/voertuigen_vergelijken"
+        android:layout_marginBottom="30dp"/>
+
+    <EditText
+        android:id="@+id/edt_LicencePlate"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:autofillHints="Kenteken"
+        android:background="@drawable/edt_licenceplate"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="@string/kenteken"
+        android:inputType="textPersonName" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_LicencePlate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+
+        <Button
+            android:id="@+id/btn_Add"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="@string/toevoegen"
+            android:layout_margin="5dp"
+            android:background="@drawable/btn_custom"
+            android:layout_marginTop="10dp" />
+
+        <Button
+            android:id="@+id/btn_Search"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@drawable/btn_custom"
+            android:text="@string/zoeken" />
+    </LinearLayout>
+</LinearLayout>
