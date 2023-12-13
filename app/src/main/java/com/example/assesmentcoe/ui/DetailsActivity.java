@@ -1,4 +1,4 @@
-package com.example.assesmentcoe;
+package com.example.assesmentcoe.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
@@ -8,6 +8,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.assesmentcoe.R;
+import com.example.assesmentcoe.model.Voertuig;
+import com.example.assesmentcoe.model.VoertuigBrandstof;
 
 import java.util.List;
 

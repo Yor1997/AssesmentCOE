@@ -1,4 +1,4 @@
-package com.example.assesmentcoe;
+package com.example.assesmentcoe.model;
 
 import androidx.annotation.NonNull;
 

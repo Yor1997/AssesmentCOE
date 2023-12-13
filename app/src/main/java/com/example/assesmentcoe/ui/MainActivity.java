@@ -1,4 +1,4 @@
-package com.example.assesmentcoe;
+package com.example.assesmentcoe.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,6 +10,15 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.assesmentcoe.api.ApiClientGekentekendeVoertuigen;
+import com.example.assesmentcoe.api.ApiClientGekentekendeVoertuigenBrandstof;
+import com.example.assesmentcoe.api.service.GekentekendeVoertuigenApiService;
+import com.example.assesmentcoe.api.service.GekentekendeVoertuigenBrandstofApiService;
+import com.example.assesmentcoe.ui.adapter.LicencePlateRecyclerViewAdapter;
+import com.example.assesmentcoe.R;
+import com.example.assesmentcoe.model.Voertuig;
+import com.example.assesmentcoe.model.VoertuigBrandstof;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -47,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
 
         apiService = ApiClientGekentekendeVoertuigen.getVoertuigApi();
-        brandstofApiService =ApiClientGekentekendeVoertuigenBrandstof.getVoertuigApi();
+        brandstofApiService = ApiClientGekentekendeVoertuigenBrandstof.getVoertuigApi();
 
         Button addButton = findViewById(R.id.btn_Add);
         addButton.setOnClickListener(v -> {

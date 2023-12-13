@@ -1,4 +1,6 @@
-package com.example.assesmentcoe;
+package com.example.assesmentcoe.api.service;
+
+        import com.example.assesmentcoe.model.VoertuigBrandstof;
 
         import retrofit2.Call;
         import retrofit2.http.GET;
