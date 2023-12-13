@@ -63,6 +63,7 @@
             android:text="@string/toevoegen"
             android:layout_margin="5dp"
             android:background="@drawable/btn_custom"
+            android:contentDescription="@string/voeg_kenteken_toe_aan_vergelijkingslijst"
             android:layout_marginTop="10dp" />
 
         <Button
@@ -71,6 +72,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:background="@drawable/btn_custom"
+            android:contentDescription="@string/zoek_op_ingevoerde_kentekens"
             android:text="@string/zoeken" />
     </LinearLayout>
 </LinearLayout>

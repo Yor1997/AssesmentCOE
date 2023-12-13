@@ -30,9 +30,10 @@
     <string name="netto_max_vermogen_elektrisch">Netto Max Vermogen Elektrisch</string>
 
     <!-- MainActivity -->
+    <string name="zoeken">Zoeken</string>
     <string name="voertuigen_vergelijken">Voertuigen vergelijken</string>
     <string name="toevoegen">Toevoegen</string>
-    <string name="zoeken">Zoeken</string>
+    <string name="voeg_kenteken_toe_aan_vergelijkingslijst">Voeg kenteken toe aan vergelijkingslijst</string>
 
     <!-- Error MainActivity -->
     <string name="no_licenceplate">"U heeft nog geen kenteken toegevoegd!"</string>
@@ -45,5 +46,7 @@
     <string name="vergelijker">Vergelijker</string>
     <string name="back_to_homescreen">Back button (Goes to Homescreen)</string>
     <string name="preformance_index">Preformance index</string>
+    <string name="zoek_op_ingevoerde_kentekens">Zoek op ingevoerde kentekens</string>
+
 
 </resources>
