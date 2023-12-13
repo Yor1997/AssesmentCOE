@@ -63,13 +63,13 @@ public class MainActivity extends AppCompatActivity {
         });
 
         Button searchButton = findViewById(R.id.btn_Search);
-        searchButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                makeApiCall();
-            }
-        });
-    }
+            searchButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    makeApiCall();
+                }
+            });
+        }
 
     private void removeItem(int position) {
         carList.remove(position);
@@ -93,30 +93,48 @@ public class MainActivity extends AppCompatActivity {
     private void makeApiCall() {
         if (carList.isEmpty()) {
             return;
+        } else if (carList.size() == 1) {
+            return;
         }
 
-        String kenteken = carList.get(carList.size() - 1);
+        String kenteken1 = carList.get(carList.size() - 1);
+        String kenteken2 = carList.get(carList.size() - 2);
 
         ExecutorService executorService = Executors.newFixedThreadPool(2);
 
         try {
-            Future<List<Voertuig>> futureCall1 = executorService.submit(() -> {
-                Response<List<Voertuig>> response = apiService.getVoertuigDetails(kenteken).execute();
+            Future<List<Voertuig>> futureCall1Car1 = executorService.submit(() -> {
+                Response<List<Voertuig>> response = apiService.getVoertuigDetails(kenteken1).execute();
                 return response.body();
             });
 
-            Future<List<VoertuigBrandstof>> futureCall2 = executorService.submit(() -> {
-                Response<List<VoertuigBrandstof>> response = brandstofApiService.getVoertuigBrandstofDetails(kenteken).execute();
+            Future<List<VoertuigBrandstof>> futureCall2Car1 = executorService.submit(() -> {
+                Response<List<VoertuigBrandstof>> response = brandstofApiService.getVoertuigBrandstofDetails(kenteken1).execute();
                 return response.body();
             });
 
-            List<Voertuig> detailsList1 = futureCall1.get();
-            List<VoertuigBrandstof> detailsList2 = futureCall2.get();
+            Future<List<Voertuig>> futureCall1Car2 = executorService.submit(() -> {
+                Response<List<Voertuig>> response = apiService.getVoertuigDetails(kenteken2).execute();
+                return response.body();
+            });
 
-            if (!detailsList1.isEmpty() && !detailsList2.isEmpty()) {
+            Future<List<VoertuigBrandstof>> futureCall2Car2 = executorService.submit(() -> {
+                Response<List<VoertuigBrandstof>> response = brandstofApiService.getVoertuigBrandstofDetails(kenteken2).execute();
+                return response.body();
+            });
+
+            List<Voertuig> detailsList1Car1 = futureCall1Car1.get();
+            List<VoertuigBrandstof> detailsList2Car1 = futureCall2Car1.get();
+
+            List<Voertuig> detailsList1Car2 = futureCall1Car2.get();
+            List<VoertuigBrandstof> detailsList2Car2 = futureCall2Car2.get();
+
+            if (!detailsList1Car1.isEmpty() && !detailsList2Car1.isEmpty()) {
                 Intent intent = new Intent(MainActivity.this, DetailsActivity.class);
-                intent.putExtra("voertuigList", (Serializable) detailsList1);
-                intent.putExtra("secondVoertuigList", (Serializable) detailsList2);
+                intent.putExtra("voertuigListCar1", (Serializable) detailsList1Car1);
+                intent.putExtra("secondVoertuigListCar1", (Serializable) detailsList2Car1);
+                intent.putExtra("voertuigListCar2", (Serializable) detailsList1Car2);
+                intent.putExtra("secondVoertuigListCar2", (Serializable) detailsList2Car2);
                 startActivity(intent);
                 finish();
             } else {
