@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -23,12 +23,11 @@ import retrofit2.Response;
 public class MainActivity extends AppCompatActivity {
 
     private EditText editText;
-    private RecyclerView recyclerView;
     private List<String> carList;
+    private TextView tv_Error_MainActivity;
     private LicencePlateRecyclerViewAdapter adapter;
     private GekentekendeVoertuigenApiService apiService;
     private GekentekendeVoertuigenBrandstofApiService brandstofApiService;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,16 +35,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         editText = findViewById(R.id.edt_LicencePlate);
-        recyclerView = findViewById(R.id.rv_LicencePlate);
+        RecyclerView recyclerView = findViewById(R.id.rv_LicencePlate);
+        tv_Error_MainActivity = findViewById(R.id.tv_Error_MainActivity);
 
         carList = new ArrayList<>();
 
-        adapter = new LicencePlateRecyclerViewAdapter(carList, new LicencePlateRecyclerViewAdapter.OnItemClickListener() {
-            @Override
-            public void onItemClick(int position) {
-                removeItem(position);
-            }
-        });
+        adapter = new LicencePlateRecyclerViewAdapter(carList, this::removeItem);
 
         recyclerView.setAdapter(adapter);
 
@@ -55,19 +50,15 @@ public class MainActivity extends AppCompatActivity {
         brandstofApiService =ApiClientGekentekendeVoertuigenBrandstof.getVoertuigApi();
 
         Button addButton = findViewById(R.id.btn_Add);
-        addButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                addItem();
-            }
+        addButton.setOnClickListener(v -> {
+            tv_Error_MainActivity.setVisibility(View.GONE);
+            addItem();
         });
 
         Button searchButton = findViewById(R.id.btn_Search);
-            searchButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    makeApiCall();
-                }
+            searchButton.setOnClickListener(v -> {
+                tv_Error_MainActivity.setVisibility(View.GONE);
+                makeApiCall();
             });
         }
 
@@ -81,7 +72,10 @@ public class MainActivity extends AppCompatActivity {
         String newItem = editText.getText().toString().trim();
         if (!newItem.isEmpty()) {
             if (carList.size() >= 2) {
-                Toast.makeText(MainActivity.this, "U kunt maximaal twee kentekens vergelijken.", Toast.LENGTH_SHORT).show();
+                tv_Error_MainActivity = findViewById(R.id.tv_Error_MainActivity);
+                String two_licenceplate = getString(R.string.two_licenceplate);
+                tv_Error_MainActivity.setText(two_licenceplate);
+                tv_Error_MainActivity.setVisibility(View.VISIBLE);
             }else {
                 carList.add(newItem);
                 adapter.notifyDataSetChanged();
@@ -91,9 +85,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void makeApiCall() {
+        tv_Error_MainActivity = findViewById(R.id.tv_Error_MainActivity);
+
         if (carList.isEmpty()) {
+            String no_licenceplate = getString(R.string.no_licenceplate);
+            tv_Error_MainActivity.setText(no_licenceplate);
+            tv_Error_MainActivity.setVisibility(View.VISIBLE);
             return;
         } else if (carList.size() == 1) {
+            String one_licenceplate = getString(R.string.one_licenceplate);
+            tv_Error_MainActivity.setText(one_licenceplate);
+            tv_Error_MainActivity.setVisibility(View.VISIBLE);
             return;
         }
 
@@ -129,7 +131,7 @@ public class MainActivity extends AppCompatActivity {
             List<Voertuig> detailsList1Car2 = futureCall1Car2.get();
             List<VoertuigBrandstof> detailsList2Car2 = futureCall2Car2.get();
 
-            if (!detailsList1Car1.isEmpty() && !detailsList2Car1.isEmpty()) {
+            if (!detailsList1Car1.isEmpty() && !detailsList2Car1.isEmpty() && !detailsList1Car2.isEmpty() && !detailsList2Car2.isEmpty()) {
                 Intent intent = new Intent(MainActivity.this, DetailsActivity.class);
                 intent.putExtra("voertuigListCar1", (Serializable) detailsList1Car1);
                 intent.putExtra("secondVoertuigListCar1", (Serializable) detailsList2Car1);
@@ -138,6 +140,9 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
                 finish();
             } else {
+                String error_detaillist = getString(R.string.error_detaillist);
+                tv_Error_MainActivity.setText(error_detaillist);
+                tv_Error_MainActivity.setVisibility(View.VISIBLE);
             }
         } catch (Exception e) {
             e.printStackTrace();

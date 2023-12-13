@@ -1,22 +1,24 @@
 package com.example.assesmentcoe;
 
+import androidx.annotation.NonNull;
+
 import java.io.Serializable;
 
 public class VoertuigBrandstof implements Serializable {
-    private String brandstof_omschrijving;
-    private String brandstofverbruik_buiten;
-    private String brandstofverbruik_gecombineerd;
-    private String brandstofverbruik_stad;
-    private String co2_uitstoot_gecombineerd;
-    private String geluidsniveau_rijdend;
-    private String geluidsniveau_stationair;
-    private String nettomaximumvermogen;
-    private String uitlaatemissieniveau;
-    private String nominaal_continu_maximumvermogen;
-    private Integer elektrisch_verbruik_enkel_elektrisch_wltp;
-    private Integer actie_radius_enkel_elektrisch_wltp;
-    private Integer actie_radius_enkel_elektrisch_stad_wltp;
-    private Integer netto_max_vermogen_elektrisch;
+    private final String brandstof_omschrijving;
+    private final String brandstofverbruik_buiten;
+    private final String brandstofverbruik_gecombineerd;
+    private final String brandstofverbruik_stad;
+    private final String co2_uitstoot_gecombineerd;
+    private final String geluidsniveau_rijdend;
+    private final String geluidsniveau_stationair;
+    private final String nettomaximumvermogen;
+    private final String uitlaatemissieniveau;
+    private final String nominaal_continu_maximumvermogen;
+    private final Integer elektrisch_verbruik_enkel_elektrisch_wltp;
+    private final Integer actie_radius_enkel_elektrisch_wltp;
+    private final Integer actie_radius_enkel_elektrisch_stad_wltp;
+    private final Integer netto_max_vermogen_elektrisch;
 
     public VoertuigBrandstof(String brandstof_omschrijving, String brandstofverbruik_buiten, String brandstofverbruik_gecombineerd, String brandstofverbruik_stad, String co2_uitstoot_gecombineerd, String geluidsniveau_rijdend, String geluidsniveau_stationair, String nettomaximumvermogen, String uitlaatemissieniveau, String nominaal_continu_maximumvermogen, Integer elektrisch_verbruik_enkel_elektrisch_wltp, Integer actie_radius_enkel_elektrisch_wltp, Integer actie_radius_enkel_elektrisch_stad_wltp, Integer netto_max_vermogen_elektrisch) {
         this.brandstof_omschrijving = brandstof_omschrijving;
@@ -91,6 +93,7 @@ public class VoertuigBrandstof implements Serializable {
         return netto_max_vermogen_elektrisch;
     }
 
+    @NonNull
     @Override
     public String toString() {
         return "brandstof_omschrijving = " + brandstof_omschrijving +

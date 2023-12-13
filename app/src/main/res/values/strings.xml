@@ -24,10 +24,17 @@
     <string name="uitlaatemissieniveau">Uitlaatemissieniveau</string>
     <string name="preformance_index">Preformance index</string>
     <string name="massa_ledig_voertuig">Massa ledig voertuig</string>
-    <string name="back_button_goes_to_homescreen">Back button (Goes to Homescreen)</string>
+    <string name="back_to_homescreen">Back button (Goes to Homescreen)</string>
     <string name="elektrisch_verbruik_enkel_elektrisch_wltp">Elektrisch verbruik enkel elektrisch wltp</string>
     <string name="nominaal_continu_maximumvermogen">Nominaal continu maximumvermogen</string>
     <string name="actie_radius_enkel_elektrisch_wltp">Actie radius enkel elektrisch wltp</string>
     <string name="actie_radius_enkel_elektrisch_stad_wltp">Actie radius enkel elektrisch stad wltp</string>
     <string name="netto_max_vermogen_elektrisch">Netto Max Vermogen Elektrisch</string>
+
+    <!-- Error MainActivity -->
+    <string name="no_licenceplate">"U heeft nog geen kenteken toegevoegd!"</string>
+    <string name="one_licenceplate">Om te kunnen vergelijken dient u twee kentekens in te geven!</string>
+    <string name="two_licenceplate">U kunt maximaal twee kentekens vergelijken!</string>
+    <string name="error_detaillist">Probeer het opnieuw!</string>
+    <string name="kenteken_verwijderen_uit_vergelijkingslijst">Kenteken verwijderen uit vergelijkingslijst</string>
 </resources>

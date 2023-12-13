@@ -27,7 +27,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
-            android:src="@drawable/baseline_close_24" />
+            android:src="@drawable/baseline_close_24"
+            android:contentDescription="@string/kenteken_verwijderen_uit_vergelijkingslijst" />
 
     </LinearLayout>
 

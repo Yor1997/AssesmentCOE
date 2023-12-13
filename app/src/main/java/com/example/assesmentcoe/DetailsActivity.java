@@ -9,7 +9,6 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.io.Serializable;
 import java.util.List;
 
 public class DetailsActivity extends AppCompatActivity {
@@ -115,7 +114,9 @@ public class DetailsActivity extends AppCompatActivity {
         }
 
         if (brandstof_omschrijvingTextViewCar1.getText().equals("Elektriciteit")) {
+            assert voertuigListCar1 != null;
             Voertuig voertuig = voertuigListCar1.get(0);
+            assert secondVoertuigListCar1 != null;
             VoertuigBrandstof voertuigBrandstof = secondVoertuigListCar1.get(0);
 
             TotalSystemPower = Double.valueOf(voertuigBrandstof.getNetto_max_vermogen_elektrisch());
@@ -123,7 +124,9 @@ public class DetailsActivity extends AppCompatActivity {
             PerformanceIndex = TotalSystemPower / EmptyMass;
             performanceIndexTextViewCar1.setText(String.valueOf(PerformanceIndex));
         }else {
+            assert voertuigListCar1 != null;
             Voertuig voertuig = voertuigListCar1.get(0);
+            assert secondVoertuigListCar1 != null;
             VoertuigBrandstof voertuigBrandstof = secondVoertuigListCar1.get(0);
 
             TotalSystemPower = Double.valueOf(voertuigBrandstof.getNettomaximumvermogen());
@@ -167,7 +170,9 @@ public class DetailsActivity extends AppCompatActivity {
         }
 
         if (brandstof_omschrijvingTextViewCar2.getText().equals("Elektriciteit")) {
+            assert voertuigListCar2 != null;
             Voertuig voertuig = voertuigListCar2.get(0);
+            assert secondVoertuigListCar2 != null;
             VoertuigBrandstof voertuigBrandstof = secondVoertuigListCar2.get(0);
 
             TotalSystemPower = Double.valueOf(voertuigBrandstof.getNetto_max_vermogen_elektrisch());
@@ -175,7 +180,9 @@ public class DetailsActivity extends AppCompatActivity {
             PerformanceIndex = TotalSystemPower / EmptyMass;
             performanceIndexTextViewCar2.setText(String.valueOf(PerformanceIndex));
         }else {
+            assert voertuigListCar2 != null;
             Voertuig voertuig = voertuigListCar2.get(0);
+            assert secondVoertuigListCar2 != null;
             VoertuigBrandstof voertuigBrandstof = secondVoertuigListCar2.get(0);
 
             TotalSystemPower = Double.valueOf(voertuigBrandstof.getNettomaximumvermogen());
@@ -185,13 +192,10 @@ public class DetailsActivity extends AppCompatActivity {
         }
 
         ImageView imgvBack = findViewById(R.id.imgv_back);
-        imgvBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(DetailsActivity.this, MainActivity.class);
-                startActivity(intent);
-                finish();
-            }
+        imgvBack.setOnClickListener(view -> {
+            Intent intent = new Intent(DetailsActivity.this, MainActivity.class);
+            startActivity(intent);
+            finish();
         });
 
         double doubleValuePerformanceIndexCar1 = Double.parseDouble(performanceIndexTextViewCar1.getText().toString());

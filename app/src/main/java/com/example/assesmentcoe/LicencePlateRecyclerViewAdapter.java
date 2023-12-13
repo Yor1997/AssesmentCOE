@@ -13,8 +13,8 @@ import java.util.List;
 
 public class LicencePlateRecyclerViewAdapter extends RecyclerView.Adapter<LicencePlateRecyclerViewAdapter.ViewHolder> {
 
-    private List<String> data;
-    private OnItemClickListener listener; // Add an interface for item click handling
+    private final List<String> data;
+    private final OnItemClickListener listener; // Add an interface for item click handling
 
     public LicencePlateRecyclerViewAdapter(List<String> data, OnItemClickListener listener) {
         this.data = data;
@@ -38,12 +38,9 @@ public class LicencePlateRecyclerViewAdapter extends RecyclerView.Adapter<Licenc
         holder.textView.setText(data.get(position));
 
         // Set click listener for the ImageView
-        holder.deleteImageView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (listener != null) {
-                    listener.onItemClick(position);
-                }
+        holder.deleteImageView.setOnClickListener(v -> {
+            if (listener != null) {
+                listener.onItemClick(position);
             }
         });
     }

@@ -1,34 +1,36 @@
 package com.example.assesmentcoe;
 
+import androidx.annotation.NonNull;
+
 import java.io.Serializable;
 
 public class Voertuig implements Serializable {
-    private String kenteken;
-    private String voertuigsoort;
-    private String merk;
-    private String handelsbenaming;
-    private Integer vervaldatum_apk;
-    private Integer datum_tenaamstelling;
-    private String inrichting;
-    private Integer aantal_zitplaatsen;
-    private String eerste_kleur;
-    private String tweede_kleur;
-    private Integer massa_ledig_voertuig;
-    private Integer toegestane_maximum_massa_voertuig;
-    private Integer massa_rijklaar;
-    private Integer maximum_massa_trekken_ongeremd;
-    private Integer maximum_trekken_massa_geremd;
-    private Integer datum_eerste_toelating;
-    private Integer datum_eerste_tenaamstelling_in_nederland;
-    private Integer catalogusprijs;
-    private Integer laadvermogen;
-    private Integer aantal_deuren;
-    private Integer aantal_wielen;
-    private Integer lengte;
-    private Integer breedte;
-    private Integer wielbasis;
-    private Integer aantal_rolstoelplaatsen;
-    private Integer hoogte_voertuig;
+    private final String kenteken;
+    private final String voertuigsoort;
+    private final String merk;
+    private final String handelsbenaming;
+    private final Integer vervaldatum_apk;
+    private final Integer datum_tenaamstelling;
+    private final String inrichting;
+    private final Integer aantal_zitplaatsen;
+    private final String eerste_kleur;
+    private final String tweede_kleur;
+    private final Integer massa_ledig_voertuig;
+    private final Integer toegestane_maximum_massa_voertuig;
+    private final Integer massa_rijklaar;
+    private final Integer maximum_massa_trekken_ongeremd;
+    private final Integer maximum_trekken_massa_geremd;
+    private final Integer datum_eerste_toelating;
+    private final Integer datum_eerste_tenaamstelling_in_nederland;
+    private final Integer catalogusprijs;
+    private final Integer laadvermogen;
+    private final Integer aantal_deuren;
+    private final Integer aantal_wielen;
+    private final Integer lengte;
+    private final Integer breedte;
+    private final Integer wielbasis;
+    private final Integer aantal_rolstoelplaatsen;
+    private final Integer hoogte_voertuig;
 
     public Voertuig(String kenteken, String voertuigsoort, String merk, String handelsbenaming, Integer vervaldatum_apk, Integer datum_tenaamstelling, String inrichting, Integer aantal_zitplaatsen, String eerste_kleur, String tweede_kleur, Integer massa_ledig_voertuig, Integer toegestane_maximum_massa_voertuig, Integer massa_rijklaar, Integer maximum_massa_trekken_ongeremd, Integer maximum_trekken_massa_geremd, Integer datum_eerste_toelating, Integer datum_eerste_tenaamstelling_in_nederland, Integer catalogusprijs, Integer laadvermogen, Integer aantal_deuren, Integer aantal_wielen, Integer lengte, Integer breedte, Integer wielbasis, Integer aantal_rolstoelplaatsen, Integer hoogte_voertuig) {
         this.kenteken = kenteken;
@@ -163,6 +165,7 @@ public class Voertuig implements Serializable {
         return hoogte_voertuig;
     }
 
+    @NonNull
     @Override
     public String toString() {
         return "kenteken = " + kenteken +
