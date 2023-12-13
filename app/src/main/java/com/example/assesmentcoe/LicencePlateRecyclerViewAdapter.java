@@ -50,12 +50,6 @@ public class LicencePlateRecyclerViewAdapter extends RecyclerView.Adapter<Licenc
         return data.size();
     }
 
-    public void simulateItemClick(int position) {
-        if (listener != null) {
-            listener.onItemClick(position);
-        }
-    }
-
     public static class ViewHolder extends RecyclerView.ViewHolder {
         TextView textView;
         ImageView deleteImageView;
