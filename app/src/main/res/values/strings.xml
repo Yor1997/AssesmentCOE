@@ -1,35 +1,38 @@
 <resources>
     <string name="app_name">AssesmentCOE</string>
-    <string name="voertuigen_vergelijken">Voertuigen vergelijken</string>
-    <string name="zoeken">Zoeken</string>
+
+    <!-- Voertuig -->
     <string name="kenteken">Kenteken</string>
-    <string name="toevoegen">Toevoegen</string>
-    <string name="merk">Merk</string>
-    <string name="vergelijker">Vergelijker</string>
-    <string name="Deuren">Aantal deuren</string>
-    <string name="catalogusprijs">Catalogusprijs</string>
-    <string name="kleur">Kleur</string>
-    <string name="handelsbenaming">handelsbenaming</string>
-    <string name="zitplaatsen">Aantal zitplaatsen</string>
-    <string name="inrichting">Inrichting</string>
     <string name="voertuigsoort">Voertuigsoort</string>
+    <string name="merk">Merk</string>
+    <string name="handelsbenaming">handelsbenaming</string>
+    <string name="inrichting">Inrichting</string>
+    <string name="zitplaatsen">Aantal zitplaatsen</string>
+    <string name="kleur">Kleur</string>
+    <string name="massa_ledig_voertuig">Massa ledig voertuig</string>
+    <string name="catalogusprijs">Catalogusprijs</string>
+    <string name="Deuren">Aantal deuren</string>
+
+    <!-- VoertuigBrandstof -->
     <string name="brandstof_omschrijving">Brandstof omschrijving</string>
     <string name="brandstofverbruik_buiten">Brandstofverbruik buiten</string>
     <string name="brandstofverbruik_gecombineerd">Brandstofverbruik gecombineerd</string>
     <string name="brandstofverbruik_stad">Brandstofverbruik stad</string>
     <string name="co2_uitstoot_gecombineerd">co2 uitstoot gecombineerd</string>
-    <string name="geluidsniveau_stationair">Geluidsniveau stationair</string>
     <string name="geluidsniveau_rijdend">Geluidsniveau rijdend</string>
+    <string name="geluidsniveau_stationair">Geluidsniveau stationair</string>
     <string name="nettomaximumvermogen">Nettomaximumvermogen</string>
     <string name="uitlaatemissieniveau">Uitlaatemissieniveau</string>
-    <string name="preformance_index">Preformance index</string>
-    <string name="massa_ledig_voertuig">Massa ledig voertuig</string>
-    <string name="back_to_homescreen">Back button (Goes to Homescreen)</string>
-    <string name="elektrisch_verbruik_enkel_elektrisch_wltp">Elektrisch verbruik enkel elektrisch wltp</string>
     <string name="nominaal_continu_maximumvermogen">Nominaal continu maximumvermogen</string>
+    <string name="elektrisch_verbruik_enkel_elektrisch_wltp">Elektrisch verbruik enkel elektrisch wltp</string>
     <string name="actie_radius_enkel_elektrisch_wltp">Actie radius enkel elektrisch wltp</string>
     <string name="actie_radius_enkel_elektrisch_stad_wltp">Actie radius enkel elektrisch stad wltp</string>
     <string name="netto_max_vermogen_elektrisch">Netto Max Vermogen Elektrisch</string>
+
+    <!-- MainActivity -->
+    <string name="voertuigen_vergelijken">Voertuigen vergelijken</string>
+    <string name="toevoegen">Toevoegen</string>
+    <string name="zoeken">Zoeken</string>
 
     <!-- Error MainActivity -->
     <string name="no_licenceplate">"U heeft nog geen kenteken toegevoegd!"</string>
@@ -37,4 +40,10 @@
     <string name="two_licenceplate">U kunt maximaal twee kentekens vergelijken!</string>
     <string name="error_detaillist">Probeer het opnieuw!</string>
     <string name="kenteken_verwijderen_uit_vergelijkingslijst">Kenteken verwijderen uit vergelijkingslijst</string>
+
+    <!-- DetailsActivity -->
+    <string name="vergelijker">Vergelijker</string>
+    <string name="back_to_homescreen">Back button (Goes to Homescreen)</string>
+    <string name="preformance_index">Preformance index</string>
+
 </resources>
