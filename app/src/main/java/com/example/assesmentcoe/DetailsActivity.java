@@ -210,7 +210,10 @@ public class DetailsActivity extends AppCompatActivity {
             View LinearLayoutCar2 = findViewById(R.id.ll_car2);
             LinearLayoutCar2.setBackgroundColor(color);
         }else {
-
+            View LinearLayoutCar1 = findViewById(R.id.ll_car1);
+            View LinearLayoutCar2 = findViewById(R.id.ll_car2);
+            LinearLayoutCar1.setBackgroundColor(color);
+            LinearLayoutCar2.setBackgroundColor(color);
         }
     }
 }
