@@ -100,39 +100,30 @@ public class MainActivity extends AppCompatActivity {
         ExecutorService executorService = Executors.newFixedThreadPool(2);
 
         try {
-            // First API Call
             Future<List<Voertuig>> futureCall1 = executorService.submit(() -> {
-                // Make the API call and return the result
                 Response<List<Voertuig>> response = apiService.getVoertuigDetails(kenteken).execute();
                 return response.body();
             });
 
-            // Second API Call
             Future<List<VoertuigBrandstof>> futureCall2 = executorService.submit(() -> {
-                // Make the API call and return the result
                 Response<List<VoertuigBrandstof>> response = brandstofApiService.getVoertuigBrandstofDetails(kenteken).execute();
                 return response.body();
             });
 
-            // Get results of both calls
             List<Voertuig> detailsList1 = futureCall1.get();
             List<VoertuigBrandstof> detailsList2 = futureCall2.get();
 
-            // Check if both calls were successful
             if (!detailsList1.isEmpty() && !detailsList2.isEmpty()) {
-                // Both API calls were successful
                 Intent intent = new Intent(MainActivity.this, DetailsActivity.class);
                 intent.putExtra("voertuigList", (Serializable) detailsList1);
                 intent.putExtra("secondVoertuigList", (Serializable) detailsList2);
                 startActivity(intent);
+                finish();
             } else {
-                // Handle error for one or both API calls
             }
         } catch (Exception e) {
             e.printStackTrace();
-            // Handle exception
         } finally {
-            // Shutdown the ExecutorService
             executorService.shutdown();
         }
     }

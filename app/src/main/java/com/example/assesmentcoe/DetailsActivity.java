@@ -2,7 +2,10 @@ package com.example.assesmentcoe;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.List;
@@ -55,6 +58,11 @@ public class DetailsActivity extends AppCompatActivity {
         TextView geluidsniveau_stationairTextViewCar1 = findViewById(R.id.tv_NoiseStationary_Car1);
         TextView nettomaximumvermogenTextViewCar1 = findViewById(R.id.tv_NetMaximum_Car1);
         TextView uitlaatemissieniveauTextViewCar1 = findViewById(R.id.tv_ExhaustEmission_Car1);
+        TextView nominaal_continu_maximumvermogenTextViewCar1 = findViewById(R.id.tv_NominalContinuousMaximumPower_Car1);
+        TextView elektrisch_verbruik_enkel_elektrisch_wltpTextViewCar1 = findViewById(R.id.tv_ElectricalConsumption_Car1);
+        TextView actie_radius_enkel_elektrisch_wltpTextViewCar1 = findViewById(R.id.tv_ActionRadius_Car1);
+        TextView actie_radius_enkel_elektrisch_stad_wltpTextViewCar1 = findViewById(R.id.tv_ActionRadiusCity_Car1);
+        TextView netto_max_vermogen_elektrischTextViewCar1 = findViewById(R.id.tv_NetMaximumElectric_Car1);
 
         if (secondVoertuigList != null && !secondVoertuigList.isEmpty()) {
             VoertuigBrandstof voertuigBrandstof = secondVoertuigList.get(0);
@@ -68,12 +76,23 @@ public class DetailsActivity extends AppCompatActivity {
             geluidsniveau_stationairTextViewCar1.setText(voertuigBrandstof.getGeluidsniveau_stationair());
             nettomaximumvermogenTextViewCar1.setText(voertuigBrandstof.getNettomaximumvermogen());
             uitlaatemissieniveauTextViewCar1.setText(voertuigBrandstof.getUitlaatemissieniveau());
+            nominaal_continu_maximumvermogenTextViewCar1.setText(voertuigBrandstof.getNominaal_continu_maximumvermogen());
+            elektrisch_verbruik_enkel_elektrisch_wltpTextViewCar1.setText(String.valueOf(voertuigBrandstof.getElektrisch_verbruik_enkel_elektrisch_wltp()));
+            actie_radius_enkel_elektrisch_wltpTextViewCar1.setText(String.valueOf(voertuigBrandstof.getActie_radius_enkel_elektrisch_wltp()));
+            actie_radius_enkel_elektrisch_stad_wltpTextViewCar1.setText(String.valueOf(voertuigBrandstof.getActie_radius_enkel_elektrisch_stad_wltp()));
+            netto_max_vermogen_elektrischTextViewCar1.setText(String.valueOf(voertuigBrandstof.getNetto_max_vermogen_elektrisch()));
         }
 
         TextView performanceIndexTextViewCar1 = findViewById(R.id.tv_PerformanceIndex_Car1);
 
         if (brandstof_omschrijvingTextViewCar1.getText().equals("Elektriciteit")) {
-            performanceIndexTextViewCar1.setText(brandstof_omschrijvingTextViewCar1.getText());
+            Voertuig voertuig = voertuigList.get(0);
+            VoertuigBrandstof voertuigBrandstof = secondVoertuigList.get(0);
+
+            TotalSystemPower = Double.valueOf(voertuigBrandstof.getNetto_max_vermogen_elektrisch());
+            EmptyMass = voertuig.getMassa_ledig_voertuig();
+            PerformanceIndex = TotalSystemPower / EmptyMass;
+            performanceIndexTextViewCar1.setText(String.valueOf(PerformanceIndex));
         }else {
             Voertuig voertuig = voertuigList.get(0);
             VoertuigBrandstof voertuigBrandstof = secondVoertuigList.get(0);
@@ -83,6 +102,16 @@ public class DetailsActivity extends AppCompatActivity {
             PerformanceIndex = TotalSystemPower / EmptyMass;
             performanceIndexTextViewCar1.setText(String.valueOf(PerformanceIndex));
         }
+
+        ImageView imgvBack = findViewById(R.id.imgv_back);
+        imgvBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(DetailsActivity.this, MainActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
 
     }
 }

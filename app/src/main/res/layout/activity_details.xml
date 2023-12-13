@@ -8,7 +8,7 @@
     tools:context=".DetailsActivity">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/imgv_back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
@@ -248,7 +248,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
-
             <TextView
                 android:id="@+id/tv_NoiseDriving_Car1_Text"
                 android:layout_width="wrap_content"
@@ -298,6 +297,71 @@
 
             <TextView
                 android:id="@+id/tv_ExhaustEmission_Car1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/tv_NominalContinuousMaximumPower_Car1_Text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/nominaal_continu_maximumvermogen"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_NominalContinuousMaximumPower_Car1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/tv_ElectricalConsumption_Car1_Text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/elektrisch_verbruik_enkel_elektrisch_wltp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_ElectricalConsumption_Car1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/tv_ActionRadius_Car1_Text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/actie_radius_enkel_elektrisch_wltp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_ActionRadius_Car1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/tv_ActionRadiusCity_Car1_Text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/actie_radius_enkel_elektrisch_stad_wltp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_ActionRadiusCity_Car1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/tv_NetMaximumElectric_Car1_Text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/netto_max_vermogen_elektrisch"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_NetMaximumElectric_Car1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
@@ -392,7 +456,6 @@
                     android:id="@+id/tv_ModelType_Car2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
-
 
                 <TextView
                     android:id="@+id/tv_Seats_Car2_Text"
@@ -524,7 +587,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
 
-
                 <TextView
                     android:id="@+id/tv_NoiseDriving_Car2_Text"
                     android:layout_width="wrap_content"
@@ -578,6 +640,71 @@
                     android:layout_height="wrap_content" />
 
                 <TextView
+                    android:id="@+id/tv_NominalContinuousMaximumPower_Car2_Text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/nominaal_continu_maximumvermogen"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_NominalContinuousMaximumPower_Car2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/tv_ElectricalConsumption_Car2_Text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/elektrisch_verbruik_enkel_elektrisch_wltp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_ElectricalConsumption_Car2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/tv_ActionRadius_Car2_Text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/actie_radius_enkel_elektrisch_wltp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_ActionRadius_Car2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/tv_ActionRadiusCity_Car2_Text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/actie_radius_enkel_elektrisch_stad_wltp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_ActionRadiusCity_Car2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/tv_NetMaximumElectric_Car2_Text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/netto_max_vermogen_elektrisch"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_NetMaximumElectric_Car2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
                     android:id="@+id/tv_PerformanceIndex_Car2_Text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -590,7 +717,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
             </LinearLayout>
-
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 </RelativeLayout>
